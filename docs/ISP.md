@@ -71,3 +71,81 @@ public class WooriCardPaymentService implements CardPaymentService {
 가능한 인터페이스 서비스를 만드는 것이 생산적인가? 효율적인가? 
 
 
+## 추가예제
+* ISP 위반 예제
+
+```java
+class Bird implements Animal {
+  eat(): void {
+    console.log('새가 음식을 먹었어요!');
+  }
+  sleep(): void {
+    console.log('Zzzzzz....');
+  }
+  cry(): void {
+    console.log('짹짹!!');
+  }
+  fly(): void {
+    console.log('새가 하늘을 날았어요!');
+  }
+}
+
+class Human implements Animal {
+  eat(): void {
+    console.log('아 배부르다');
+  }
+  sleep(): void {
+    console.log('Zzzzzz....');
+  }
+  cry(): void {
+    console.log('ㅠㅠㅠ');
+  }
+  fly(): void {
+    // ????
+  }
+}
+
+```
+
+```java
+interface Animal {
+  eat(): void;
+  sleep(): void;
+  cry(): void;
+}
+
+interface FlyableAnimal extends Animal {
+  fly(): void;
+}
+
+class Bird implements FlyableAnimal {
+  eat(): void {
+    console.log('새가 음식을 먹었어요!');
+  }
+  sleep(): void {
+    console.log('Zzzzzz....');
+  }
+  cry(): void {
+    console.log('짹짹!!');
+  }
+  fly(): void {
+    console.log('새가 하늘을 날았어요!');
+  }
+}
+
+class Human implements Animal {
+  eat(): void {
+    console.log('아 배부르다');
+  }
+  sleep(): void {
+    console.log('Zzzzzz....');
+  }
+  cry(): void {
+    console.log('ㅠㅠㅠ');
+  }
+  // fly() 메서드를 구현하지 않는다. ISP 준수!
+}
+
+```
+
+
