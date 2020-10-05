@@ -112,6 +112,8 @@ public class WooriCardPaymentService implements CardPaymentService {
 }
 ```
 
+
+## 정리
 의존관계를 인터페이스를 통해서 역전시키는 것입니다. **새로운 카드 결제가 추가된다고 하더라도 PaymentController 수정 없이 CardPayment를 확장하고 있습니다.**
 
 다시 한번 정리하면 **새로운 카드 결제가 추가(새로운 결제 타입 추가) 되더라도(확장에 열려있음) 카드 결제를 호출하는 코드 쪽에서 변경이(변경에는 닫혀 있음) 변경이 발생하지 않습니다. 물론 cardPaymentFactory 클래스의 의존성 주입 코드가 한번은 추가됩니다.**
@@ -124,8 +126,3 @@ public class WooriCardPaymentService implements CardPaymentService {
 
 **그렇다면 중요한 것은 캡슐화, 객체의 올바른 책임, 역할을 부여하여 예측 변경 시점에 OCP를 쉽게 적용할 수 있도록 하는 것이 중요하다고 생각합니다.**
 
-
-
-## 참고
-* [도서 - 개발자가 반드시 정복해야 할 객체 지향과 디자인 패턴](http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&barcode=9788969090010)
-* [Youtube 강의(백명석님)](https://www.youtube.com/user/codetemplate/videos)
