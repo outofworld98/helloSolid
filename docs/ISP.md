@@ -74,7 +74,7 @@ public class WooriCardPaymentService implements CardPaymentService {
 ## 추가예제
 * ISP 위반 예제
 
-```java
+```javascript
 class Bird implements Animal {
   eat(): void {
     console.log('새가 음식을 먹었어요!');
@@ -107,7 +107,7 @@ class Human implements Animal {
 
 ```
 
-```java
+```javascript
 interface Animal {
   eat(): void;
   sleep(): void;
