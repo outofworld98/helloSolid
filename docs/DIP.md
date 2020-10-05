@@ -117,6 +117,7 @@ public class ShinhanCardPaymentService implements CardPaymentService {
 
 또 하위 정책의 신한 카드, 우리 카드가 변경되더라도 PaymenrService 인터페이스를 의존하고 있으므로 확장에 열려 있고 변경에는 닫혀 있는 OCP를 준수하게 됩니다.
 
+
 ## 결론
 그렇다면 모든 곳에 대해서 세부 구현체를 바라보는 것이 아니라 인터페이스로 바라보는 것이 올바른 것일까요? **제 개인적인 생각은 그렇지 않다 입니다.**
 
@@ -125,6 +126,6 @@ public class ShinhanCardPaymentService implements CardPaymentService {
 또 개인적인 생각으로는 인프라스트럭처에 대해서는 인터페이스로 바라보는 것이 적절하다고 생각합니다. 인프라스트럭처는 언제든지 대체될 수 있는 영역이기 때문에 이런 영역에 대해서는 인터페이스로 바라보게 설계해서 의존성을 역전 시키는 것이 좋을 거 같습니다.
 
 
-## 참고
-* [도서 - 개발자가 반드시 정복해야 할 객체 지향과 디자인 패턴](http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&barcode=9788969090010)
-* [Youtube 강의(백명석님)](https://www.youtube.com/user/codetemplate/videos)
+
+
+
