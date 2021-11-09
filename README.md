@@ -1,7 +1,3 @@
-[![Build Status](https://travis-ci.com/cheese10yun/spring-SOLID.svg?branch=master)](https://travis-ci.com/cheese10yun/spring-SOLID)
-[![Coverage Status](https://coveralls.io/repos/github/cheese10yun/spring-SOLID/badge.svg?branch=master)](https://coveralls.io/github/cheese10yun/spring-SOLID?branch=master)
-[![codecov](https://codecov.io/gh/cheese10yun/spring-SOLID/branch/master/graph/badge.svg)](https://codecov.io/gh/cheese10yun/spring-SOLID)
-
 # Spring 에제로 보는 SOLID 
 SOLID 다소 딱딱하고 장황할 설명으로 인해서 이해하지 못한 부분들을 최대한 쉽게 풀어 이야기해 보고 Spring 기반 베이스로 코드를 작성.
 
