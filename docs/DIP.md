@@ -76,15 +76,11 @@ public void pay(@RequestBody CardPaymentDto.PaymentRequest req){
 ```
 우리 카드, 신한 카드 결제 요청을 받을 PaymentRequest Dto 클래스를 생성하였고 CardType으로 해당 맞는 카드 타입에 맞는 서비스를 호출하는 구조입니다. 가장 쉽게 생각할 수 있는 구조이지만 결코 좋은 구조가 아닙니다. 카드가 지속해서 추가될 때마다 해당 카드결제를 위한 if 문을 지속해서 추가해야 합니다. 이런 반복적인 if는 해당 리팩토링 대상일 확률이 매우 높습니다.
 
-그 밖에도 추가될 카드의 결제를 담당하는 XXXPaymentService 클래스들이 지속해서 의존성 이루어집니다. 그 결과 PaymentController는 컨트롤러 계층임에도 너무 많은 책임을 갖게 되며, **확장에 어렵고, 변경에 취약한 구조가 됩니다.** 이 설명은 [개방 폐쇄의 원칙: Open Close Principle](https://github.com/cheese10yun/spring-SOLID/blob/master/docs/OCP.md)에서도 언급했던 내용입니다. 이렇듯 DIP와 OCP는 연관이 크며 SOLID도 각기 다른 메커니즘이 아니라 서로 유기적으로 연결되어 있습니다.
+그 밖에도 추가될 카드의 결제를 담당하는 XXXPaymentService 클래스들이 지속해서 의존성 이루어집니다. 그 결과 PaymentController는 컨트롤러 계층임에도 너무 많은 책임을 갖게 되며, **확장에 어렵고, 변경에 취약한 구조가 됩니다.** 이 설명은 [개방 폐쇄의 원칙: Open Close Principle](https://git.lsis.com/dive/hello-solid/blob/master/docs/OCP.md) 언급했던 내용입니다. 이렇듯 DIP와 OCP는 연관이 크며 SOLID도 각기 다른 메커니즘이 아니라 서로 유기적으로 연결되어 있습니다.
 
 
 
 ## DIP 준수
-
-<p align="center">
-    <img src="https://i.imgur.com/TdGYl8n.png">
-</p>
 
 * 상위 모듈은 하위 모듈의 구현에 의존해서는 안 된다. 하위의 모듈이 상위 모듈에 정의한 추상 타입에 의존 해야한다.
 

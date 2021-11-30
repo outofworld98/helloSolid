@@ -25,10 +25,6 @@
 
 
 ## OCP를 준수하기 위한 실패 과정들
-<p align="center">
-    <img src="https://i.imgur.com/a21midG.png">
-</p>
-
 기존 PamentController에서 ShinhanCardPaymentService를 의존해서 신한 카드 결제를 진행 헸습니다. 이제 우리 은행 카드결제가 추가되었으니 아래 컨트롤러처럼 기존 신한 카드를 건드리지(변경에 닫혀있다) 않고 우리 카드를 추가하는 가장 쉬운 방법은 아래처럼 컨트롤러를 각각 구성하는 방법입니다. 물론 OCP를 위반하는 코드입니다.
 
 #### 카드사 마다 API
@@ -83,10 +79,6 @@ public void pay(@RequestBody CardPaymentDto.PaymentRequest req){
 그 밖에도 추가될 카드의 결제를 담당하는 XXXPaymentService 클래스들이 지속해서 의존성 이루어집니다. 그 결과 PaymentController는 컨트롤러 계층임에도 너무 많은 책임을 갖게 되며, **확장에 어렵고, 변경에 취약한 구조가 됩니다.**
  
 ## OCP 준수
-
-<p align="center">
-    <img src="https://i.imgur.com/TdGYl8n.png">
-</p>
 
 ```java
 public class PaymentController {

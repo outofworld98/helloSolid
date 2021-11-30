@@ -2,7 +2,7 @@
 
 단일 책임의 원칙: Single Responsibility Principle 핵심 키워드는 다음과 같습니다. 해당 키워드를 기반으로 세부적으로 설명하겠습니다.
 
-* 클래스는 단 한 개의 책임을 가져야 한다.
+* 클래스는 단 한 개의 책임을 가져야 한다. -> 한 개의 책임? 클래스의 변경을 이르키는 사용자는 하나여야 한다.
 * 클래스의 변경하는 이유는 단 한 개여야 한다.
 * 누가 해당 메소드의 변경을 유발하는 사용자(Actor) 인가?
 
@@ -51,7 +51,7 @@ public class WooriCardPaymentService implements CardPaymentService {
 }
 ```
 
-**위의 UML, 인터페이스가 이해가 어렵다면 이전 포스팅 [OCP](https://github.com/cheese10yun/spring-SOLID/blob/master/docs/OCP.md), [DIP](https://github.com/cheese10yun/spring-SOLID/blob/master/docs/DIP.md)를 먼저 보시는 것을 권장합니다.**
+**위의 UML, 인터페이스가 이해가 어렵다면 이전 포스팅 [OCP](https://git.lsis.com/dive/hello-solid/blob/master/docs/OCP.md), [DIP](https://git.lsis.com/dive/hello-solid/blob/master/docs/DIP.md)를 먼저 보시는 것을 권장합니다.**
 
 
 * 클래스의 책임 : **해당 카드사의 결제 API를 호출하기 위한 적절한 값을 생성해서 호출하는 것**
