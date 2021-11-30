@@ -45,9 +45,6 @@ public class WooriCardPaymentService implements CardPaymentService {
 }
 ```
 
-**위의 UML, 인터페이스가 이해가 어렵다면 이전 포스팅 [OCP](https://git.lsis.com/dive/hello-solid/blob/master/docs/OCP.md), [DIP](https://git.lsis.com/dive/hello-solid/blob/master/docs/DIP.md)를 먼저 보시는 것을 권장합니다.**
-
-
 * 클래스의 책임 : **해당 카드사의 결제 API를 호출하기 위한 적절한 값을 생성해서 호출하는 것**
 * 변경의 근원 : 카드 결제를 하는 Actor
 * Actor : 카드결제를 행하는 **행위자**
@@ -56,11 +53,11 @@ public class WooriCardPaymentService implements CardPaymentService {
 
 만약 Actor가 결제 완료 시간 등 결제 정보를 받기를 원하게 된다면 `pay` 메서드의 리턴 타입이 변경이 발생합니다. 즉 카드 결제의 변경은 Actor의 변경에서부터 발생하게 됩니다. 
 
-**여기서 Actor를 단순히 사용자로 바라보면 안 되고 Actor는 그 행위(국내 결제)를 하는 행위자로 봐야 한다고 생각합니다. 그리고 단일 책임이라는 것은 단일 Actor를 뜻한다고 생각합니다.** 이 부분은 아래에서 추가로 설명하겠습니다.
+**여기서 Actor를 단순히 사용자로 바라보면 안 되고 Actor는 그 행위(국내 결제)를 하는 행위자로 봐야 한다. 그리고 단일 책임이라는 것은 단일 Actor를 뜻함**
 
 ## 추가될 해외 카드 결제의 SRP(미준수)
 
-![img_3.png](img_3.png)![](https://i.imgur.com/DyLl9Fh.png)
+![img_3.png](img_3.png)![]
 
 
 ```java
@@ -105,7 +102,7 @@ public class WooriCardPaymentService implements CardPaymentService {
 
 ## 추가될 해외 카드 결제의 SRP(준수)
 
-![img_4.png](img_4.png)![](https://i.imgur.com/1vc5En5.png)
+![img_4.png](img_4.png)!
 
 카드 파트너사의 해외 결제 여부로 더이상 PaymentService에서 국내 결제와, 해외 결제를 처리를 못하게 되었습니다. 그렇다면 책임을 분리시키고 그것을 인터페이스로 바라보게 하여 앞으로 해외 결제 카드추가시 확장에 열려있게 할 수 있습니다.
 

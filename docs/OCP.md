@@ -24,6 +24,7 @@
 
 ## OCP를 준수하기 위한 실패 과정들
 ![img.png](img.png)
+
 기존 PamentController에서 ShinhanCardPaymentService를 의존해서 신한 카드 결제를 진행 헸습니다. 이제 우리 은행 카드결제가 추가되었으니 아래 컨트롤러처럼 기존 신한 카드를 건드리지(변경에 닫혀있다) 않고 우리 카드를 추가하는 가장 쉬운 방법은 아래처럼 컨트롤러를 각각 구성하는 방법입니다. 물론 OCP를 위반하는 코드입니다.
 
 #### 카드사 마다 API
@@ -65,7 +66,7 @@ public void pay(@RequestBody CardPaymentDto.PaymentRequest req){
 
 
 * 기존 코드는 카드 파트너사의 API Request에 의존 관계를 분리할 수 있습니다.
-    * DIP의 '상위 레벨의 정책은 하위 레벨의 상세 합에 의존하면 안 된다.'를 준수하게 됩니다. (해당 개념은 DIP에 자세하게 포스팅하겠습니다.)
+    * DIP의 '상위 레벨의 정책은 하위 레벨의 상세 합에 의존하면 안 된다.'를 준수하게 됩니다. (DIP 참고)
 * Request 값을 통일 함으로써 추상화의 기초가 됩니다.
 
 
