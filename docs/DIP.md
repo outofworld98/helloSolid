@@ -30,9 +30,7 @@
 
 ## DIP 준수하지 않은 코드
 
-<p align="center">
-    <img src="https://i.imgur.com/Zkykv9m.png">
-</p>
+![img_5.png](img_5.png)
 
 
 
@@ -81,7 +79,7 @@ public void pay(@RequestBody CardPaymentDto.PaymentRequest req){
 
 
 ## DIP 준수
-
+![img_6.png](img_6.png)
 * 상위 모듈은 하위 모듈의 구현에 의존해서는 안 된다. 하위의 모듈이 상위 모듈에 정의한 추상 타입에 의존 해야한다.
 
 DIP의 핵심 내용이 문장장을 위의 요구사항에 맞춰서 풀어 보겠습니다. 

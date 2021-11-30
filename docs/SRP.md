@@ -24,10 +24,7 @@
 
 
 ## 기존 국내 카드 결제의 SRP
-
-<p align="center">
-    <img src="https://i.imgur.com/TdGYl8n.png">
-</p>
+![img_2.png](img_2.png)
 
 ```java
 public interface CardPaymentService {
@@ -68,7 +65,7 @@ public class WooriCardPaymentService implements CardPaymentService {
 
 ## 추가될 해외 카드 결제의 SRP(미준수)
 
-![](https://i.imgur.com/DyLl9Fh.png)
+![img_3.png](img_3.png)![](https://i.imgur.com/DyLl9Fh.png)
 
 
 ```java
@@ -113,7 +110,7 @@ public class WooriCardPaymentService implements CardPaymentService {
 
 ## 추가될 해외 카드 결제의 SRP(준수)
 
-![](https://i.imgur.com/1vc5En5.png)
+![img_4.png](img_4.png)![](https://i.imgur.com/1vc5En5.png)
 
 카드 파트너사의 해외 결제 여부로 더이상 PaymentService에서 국내 결제와, 해외 결제를 처리를 못하게 되었습니다. 그렇다면 책임을 분리시키고 그것을 인터페이스로 바라보게 하여 앞으로 해외 결제 카드추가시 확장에 열려있게 할 수 있습니다.
 
